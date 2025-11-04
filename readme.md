@@ -11,11 +11,13 @@ Decentralized finance (#defi) is the movement that leverages open source softwar
 - [Decentralized Exchange Protocols](#decentralized-exchange-protocols)
 - [Stablecoins](#stablecoins)
 - [Lending Protocols](#lending-protocols)
+- [Liquid Staking Protocols](#liquid-staking-protocols)
+- [Yield Aggregators](#yield-aggregators)
+- [Restaking Protocols](#restaking-protocols)
 - [Derivative Protocols/Prediction Markets](#derivative-protocols)
-- [Bundling Protocols](#bundling-protocols)
-- [Tokenization Protocols](#tokenization-protocols)
-- [Fund Protocols](#fund-protocols)
-- [KYC/AML/Identity](#kyc-aml-identity)
+- [Layer 2 Scaling Solutions](#layer-2-scaling-solutions)
+- [Index Protocols](#bundling-protocols)
+- [Asset Management](#fund-protocols)
 - [Applications/Tools](#applications-tools)
 - [Analytics](#analytics)
 - [Misc](#misc)
@@ -25,163 +27,258 @@ Decentralized finance (#defi) is the movement that leverages open source softwar
 
 ## Decentralized Exchange Protocols
 
-- [BitShares](https://bitshares.org/technology/decentralized-asset-exchange) ([source code](https://github.com/bitshares), [white paper](https://www.bitshares.foundation/download/articles/BitSharesBlockchain.pdf)) - Decentralized exchange protocol based on the Graphene blockchain
-- Bitcoin
-  - [Bisq](https://bisq.network) ([source code](https://github.com/bisq-network/bisq), [white paper](https://github.com/bisq-network/bisq-docs/blob/master/exchange/whitepaper.adoc)) - Protocol for peer-to-peer exchange of bitcoin
-- Ethereum
-  - [0x](https://0x.org/) ([source code](https://github.com/0xProject), [white paper](https://0x.org/pdfs/0x_white_paper.pdf)) - Protocol for decentralized exchange of Ethereum assets using relayers, now on version 2
-  - [Bancor Protocol](https://about.bancor.network/protocol/) ([source code](https://github.com/bancorprotocol/contracts), [white paper](https://storage.googleapis.com/website-bancor/2018/04/01ba8253-bancor_protocol_whitepaper_en.pdf)) - Protocol for converting one token to another using "smart tokens"
-  - [DutchX](https://dutchx.readthedocs.io/en/latest/index.html) ([source code](https://github.com/gnosis/dx-contracts), [docs](https://github.com/gnosis/dx-docs/blob/master/source/_static/docs/DutchX_Documentation.pdf)) - Decentralized trading protocol for ERC-20s that uses the Dutch auction model to achieve fair prices
-  - [Hydro Protocol](https://hydroprotocol.io/) ([fork announcement](https://medium.com/hydro-protocol/why-we-are-forking-0x-97dc48ee0426), [source code](https://github.com/HydroProtocol), original white paper removed from website but is archived [here](https://whitepaper.io/document/170/hydro-protocol-whitepaper)) - A fork of 0x from DDEX with new order schema, a new matching engine, a different liquidity sharing model, and no ZRX token
-  - [Kyber](https://kyber.network) ([source code](https://github.com/kybernetwork), [white paper](https://files.kyber.network/Kyber_Protocol_22_April_v0.1.pdf)) - On-chain protocol for decentralized token swaps and for easy application integration
-  - [Loopring](https://loopring.org) ([source code](https://github.com/loopring), [white paper](https://loopring.org/resources.html)) - Protocol for building decentralized exchanges
-  - [Ren](https://renproject.io/) ([source code](https://github.com/renproject), [white paper](https://renproject.io/litepaper.pdf)) - Decentralized dark pool protocol for atomic swaps of digital assets formerly known as Republic
-  - [Swap / AirSwap's Protocol](https://airswap.io) ([source code](https://github.com/airswap), [white paper](https://swap.tech/whitepaper/)) - Protocol for peer-to-peer trading of ERC-20 tokens
-  - [Uniswap](https://uniswap.io) ([source code](https://github.com/Uniswap), [white paper](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)) - "Public good"-oriented interface for ERC-20 token exchange with zero rent-extraction.
+### Ethereum & EVM
+- [Uniswap](https://uniswap.org) ([source code](https://github.com/Uniswap), [docs](https://docs.uniswap.org/)) - Largest DEX by volume. V4 adds customizable hooks for advanced functionality
+- [Curve Finance](https://curve.fi) ([source code](https://github.com/curvefi), [docs](https://docs.curve.fi/)) - Specialized AMM for stablecoin and like-kind asset swaps with low slippage
+- [Balancer](https://balancer.fi) ([source code](https://github.com/balancer), [docs](https://docs.balancer.fi/)) - Customizable AMM pools supporting multiple tokens with different weightings
+- [PancakeSwap](https://pancakeswap.finance) ([source code](https://github.com/pancakeswap), [docs](https://docs.pancakeswap.finance/)) - Largest DEX on BNB Chain, now multi-chain
+- [SushiSwap](https://sushi.com) ([source code](https://github.com/sushiswap), [docs](https://docs.sushi.com/)) - Multi-chain AMM with additional DeFi products
+- [Aerodrome](https://aerodrome.finance) ([source code](https://github.com/aerodrome-finance), [docs](https://docs.aerodrome.finance/)) - Next-gen AMM on Base with ve(3,3) tokenomics
 
-- [Stellar](https://www.stellar.org/developers/guides/concepts/exchange.html) ([source code](https://github.com/stellar), [white paper](https://www.stellar.org/papers/stellar-consensus-protocol.pdf)) - Decentralized protocol for financial applications, including support for decentralized exchange
-  - [StellarX](https://www.stellarx.com/) (closed source) - A UI for the native Stellar DEX built by [Interstellar](https://interstellar.com/)
-  - [Interstellar.exchange](https://interstellar.exchange/) (closed source) - A UI for the native Stellar DEX built by [Fintech](https://www.fintech.cm/) (not related to the company Interstellar)
-  - [Stellarport](https://stellarport.io) (closed source) - A UI for the Stellar DEX
-  - [Stellarterm](https://stellarterm.com/) ([source code](https://github.com/stellarterm/stellarterm)) - An open-source UI for the Stellar Dex
+### DEX Aggregators
+- [1inch](https://1inch.io) ([source code](https://github.com/1inch), [docs](https://docs.1inch.io/)) - Finds best swap routes across multiple DEXs
+- [Matcha](https://matcha.xyz) - Aggregator by 0x with professional trading UI
+- [ParaSwap](https://paraswap.io) ([source code](https://github.com/paraswap)) - Multi-chain aggregator with MEV protection
+- [CoW Swap](https://cow.fi) ([source code](https://github.com/cowprotocol), [docs](https://docs.cow.fi/)) - MEV-protected trading via batch auctions and off-chain order matching
+
+### Solana
+- [Jupiter](https://jup.ag) ([source code](https://github.com/jup-ag)) - Leading Solana DEX aggregator with limit orders and DCA
+- [Raydium](https://raydium.io) ([source code](https://github.com/raydium-io)) - AMM with concentrated liquidity integrated with Serum orderbook
+- [Orca](https://www.orca.so) ([source code](https://github.com/orca-so)) - User-friendly DEX with concentrated liquidity (Whirlpools)
+
+### Cross-Chain
+- [THORChain](https://thorchain.org) ([source code](https://gitlab.com/thorchain), [docs](https://docs.thorchain.org/)) - Native cross-chain swaps (BTC, ETH, etc.) without wrapped tokens
 
 <a name="stablecoins" />
 
 ## Stablecoins
 
-- IOU / Centralized
-  - Bitcoin / Omni
-    - [Tether](https://tether.to) (closed source, [white paper](https://tether.to/wp-content/uploads/2016/06/TetherWhitePaper.pdf)) - Controversial USD-backed token connected to Bitfinex
-  - Ethereum
-    - [CENTRE USDC](https://www.centre.io/usdc) ([source code](https://github.com/centrehq), [white paper](https://www.centre.io/pdfs/centre-whitepaper.pdf)) - ERC-20 stablecoin originally issued by [Circle](https://www.circle.com/en/usdc) and now embraced by [Coinbase](https://blog.coinbase.com/coinbase-and-circle-announce-the-launch-of-usdc-a-digital-dollar-2cd6548d237)
-    - [Gemini Dollar](https://gemini.com/dollar/) ([source code](https://github.com/gemini/dollar), [white paper](https://gemini.com/wp-content/themes/gemini/assets/img/dollar/gemini-dollar-whitepaper.pdf)) - ERC-20 stablecoin issued by Gemini
-    - [Paxos](https://www.paxos.com/pax/) ([source code](https://github.com/paxosglobal/pax-contracts), [white paper](https://www.paxos.com/wp-content/uploads/2019/02/PAX_Whitepaper.pdf)) - ERC-20 stablecoin issued by Paxos Trust Company
-    - [TrueUSD](https://www.trusttoken.com/trueusd/) ([source code](https://github.com/trusttoken/true-currencies)) - ERC-20 stablecoin with KYC/AML issued by TrustToken
-    - [DGX Token from Digix](https://digix.global/dgx) ([source code](https://github.com/DigixGlobal), [white paper](https://github.com/DigixGlobal/digix-press-kit/blob/master/digix-whitepaper.pdf)) - Token which represents 1 gram of gold on Ethereum
-  - Stellar
-    - [AnchorUSD](https://www.anchorusd.com/) (closed source) - KYC/AML compliant stellar-based token that promises deposits are held 1:1 in audited, US-based bank accounts
-    - [Stronghold](https://stronghold.co/stronghold-usd/) (closed source, [white paper](https://docsend.com/view/gg3p9ce)) - Stellar-based token that provides a KYC/AML compliant USD stablecoin
-    - [White Standard](https://thewhitecompanyus.com/white-standard/) ([source code](https://github.com/thewhitecompany/whitestandard#), [white paper](https://thewhitecompanyus.com/white-paper)) - Stellar-based tokens that provide stablecoins for a variety of currencies
-- Collateralized
-  - [Celo](https://celo.org) ([white paper](https://storage.googleapis.com/celo_whitepapers/Celo__A_Multi_Asset_Cryptographic_Protocol_for_Decentralized_Social_Payments.pdf)) - Over-collateralized stablecoin targeting the unbanked using its own distributed ledger
-  - Ethereum
-    - [Dai Stablecoin from Maker](https://makerdao.com/dai) ([source code](https://github.com/makerdao), [white paper](https://makerdao.com/whitepaper/)) - Stablecoin based on smart contracts for creating collateralized debt positions
-    - [Synthetix](https://www.synthetix.io/) ([rebranding announcement](https://blog.synthetix.io/havven-is-transforming-into-synthetix/), [source code](https://github.com/Synthetixio/synthetix), [white paper](https://www.synthetix.io/uploads/synthetix_whitepaper.pdf)) - Decentralized stablecoin modeled on centralized closed loop payment networks formerly known as Havven
-     - [WBTC](https://www.wbtc.network) ([source code](https://github.com/WrappedBTC/bitcoin-token-smart-contracts), [white paper](https://www.wbtc.network/assets/wrapped-tokens-whitepaper.pdf)) - ERC-20 token backed 1:1 by Bitcoin
-- Algorithmic
-  - Ethereum
-    - [Ampleforth](https://www.ampleforth.org/) ([rebranding announcement](https://medium.com/ampleforth/fragments-to-ampleforth-thoughts-behind-the-name-change-e38bf95077b2), [source code](https://github.com/ampleforth), [white paper](https://www.ampleforth.org/paper/)) - Monetary policy-based stablecoin protocol formerly known as Fragments
-    - ~~[Basis](https://www.basis.io) ([white paper](https://www.basis.io/basis_whitepaper_en.pdf)) - Algorithmic stablecoin that "can be robustly pegged to arbitrary assets or baskets of goods"~~ - shut down due to inability to release tokens without securities classification in the US
-    - [Carbon](https://www.carbon.money/) ([white paper](https://www.carbon.money/static/media/explainer.964136d4.pdf)) - Stablecoin that will be composed of a basket of whitelisted tokens that is "functionally fiat-backed with the potential to whitelist an algorithmic stablecoin"
-    - [Terra](https://terra.money) ([source code](https://github.com/terra-project), [white paper](https://s3.ap-northeast-2.amazonaws.com/terra.money.home/static/Terra_White_paper.pdf?fab2019)) - Protocol that ensures price-stability by algorithmically expanding and contracting supply
+### Fiat-Backed (Centralized)
+- [Tether (USDT)](https://tether.to) ([docs](https://tether.to/en/transparency/)) - $144B+ market cap, most liquid stablecoin
+- [USD Coin (USDC)](https://www.circle.com/en/usdc) ([source code](https://github.com/circlefin/stablecoin-evm), [docs](https://developers.circle.com/stablecoins/docs)) - $59B+ market cap, issued by Circle
+- [Paxos Dollar (USDP)](https://paxos.com/usdp/) ([source code](https://github.com/paxosglobal/usdp-contracts)) - Regulated by NYDFS
+- [Gemini Dollar (GUSD)](https://gemini.com/dollar) ([source code](https://github.com/gemini/dollar)) - Issued by Gemini exchange
+
+### Crypto-Collateralized
+- [DAI/USDS](https://makerdao.com) ([source code](https://github.com/makerdao), [docs](https://docs.makerdao.com/)) - $5B+ supply, overcollateralized by crypto (MakerDAO rebranded to Sky)
+- [USDe](https://ethena.fi) ([docs](https://ethena-labs.gitbook.io/ethena-labs)) - Synthetic dollar using delta-neutral positions on perpetual futures
+- [GHO](https://gho.aave.com) ([source code](https://github.com/aave/gho-core), [docs](https://docs.gho.xyz/)) - Minted by borrowing on Aave
+- [crvUSD](https://crvusd.curve.fi) ([docs](https://docs.curve.fi/crvusd/)) - Soft liquidation mechanism (LLAMMA) reduces liquidation risk
+- [LUSD](https://www.liquity.org) ([source code](https://github.com/liquity/dev), [docs](https://docs.liquity.org/)) - 0% interest, ETH-only collateral, immutable protocol
+- [FRAX](https://frax.finance) ([source code](https://github.com/FraxFinance), [docs](https://docs.frax.finance/)) - Fractional-algorithmic design
+
+### Wrapped BTC
+- [WBTC](https://wbtc.network) ([source code](https://github.com/WrappedBTC/bitcoin-token-smart-contracts)) - Centralized custody, largest supply
+- [tBTC](https://threshold.network/earn/btc) ([source code](https://github.com/keep-network/tbtc-v2)) - Decentralized Bitcoin bridge
+
+### Historical Note
+- ~~[Terra UST](https://terra.money)~~ - Collapsed May 2022 (~$40B lost). Pure algorithmic stablecoins have proven unreliable
 
 <a name="lending-protocols" />
 
 ## Lending Protocols
 
-- Ethereum
-  - [Compound](https://compound.finance) ([source code](https://github.com/compound-finance/), [white paper](https://compound.finance/documents/Compound.Whitepaper.v04-83de48b6622ddd665234b41076d04c8b.pdf?vsn=d)) - Protocol for algorithmic money markets
-  - [Dharma](https://www.dharma.io/) ([source code](https://github.com/dharmaprotocol) [white paper](https://dharmaprotocol.github.io/developer-docs/#/)) - Protocol for building lending products using tokenized debt
-  - [Ethlend](https://ethlend.io) ([source code](https://github.com/ETHLend), [white paper](https://github.com/ETHLend/Documentation/blob/master/ETHLendWhitePaper.md)) - Marketplace for peer-to-peer lending
-  - [Lendroid](https://www.lendroid.com) ([source code](https://github.com/lendroidproject), [white paper](https://lendroid.com/assets/whitepaper-margin-trading.pdf)) - Protocol for decentralized lending, margin trading, and short selling
-  - [Marble](https://marble.org) ([source code](https://github.com/marbleprotocol)) - "Flash lending" protocol for borrowing "Ether and ERC20 tokens to take advantage of arbitrage opportunities on Ethereum"
-  - [Ripio](https://ripiocredit.network/) ([source code](https://github.com/ripio/rcn-network), [white paper](https://ripiocredit.network/wp/RCN%20Whitepaper%20ENG.pdf)) - P2P global credit network protocol based on cosigned smart contracts
+- [Aave](https://aave.com) ([source code](https://github.com/aave), [docs](https://docs.aave.com/)) - $14.6B+ TVL, invented flash loans, multi-chain. V3 improves capital efficiency
+- [Compound](https://compound.finance) ([source code](https://github.com/compound-finance/), [docs](https://docs.compound.finance/)) - Algorithmic interest rates. V3 adds isolated markets per asset
+- [Morpho](https://morpho.org) ([source code](https://github.com/morpho-org), [docs](https://docs.morpho.org/)) - Improves rates by peer-to-peer matching on top of Aave/Compound
+- [Spark](https://spark.fi) ([source code](https://github.com/marsfoundation/spark-protocol), [docs](https://docs.sparkprotocol.io/)) - MakerDAO's lending market, integrated with DAI Savings Rate
+- [Euler](https://euler.finance) ([source code](https://github.com/euler-xyz), [docs](https://docs.euler.finance/)) - Permissionless listings with reactive interest rates
+- [Radiant Capital](https://radiant.capital) ([docs](https://docs.radiant.capital/)) - Omnichain liquidity layer (borrow on one chain, deposit on another)
+- [Venus](https://venus.io) ([source code](https://github.com/VenusProtocol), [docs](https://docs-v4.venus.io/)) - Largest lending market on BNB Chain
+- [Benqi](https://benqi.fi) ([source code](https://github.com/Benqi-fi), [docs](https://docs.benqi.fi/)) - Avalanche lending market
+- [Alchemix](https://alchemix.fi) ([source code](https://github.com/alchemix-finance), [docs](https://alchemix-finance.gitbook.io/)) - Self-repaying loans (debt paid from yield on collateral)
+
+<a name="liquid-staking-protocols" />
+
+## Liquid Staking Protocols
+
+Stake PoS assets while keeping them liquid via receipt tokens (e.g., stake ETH, receive stETH to use in DeFi).
+
+### Ethereum
+- [Lido](https://lido.fi) ([source code](https://github.com/lidofinance), [docs](https://docs.lido.fi/)) - $10B+ TVL, ~29% of all staked ETH. Liquid token: stETH
+- [Rocket Pool](https://rocketpool.net) ([source code](https://github.com/rocket-pool), [docs](https://docs.rocketpool.net/)) - Most decentralized, 3,800+ independent validators. Liquid token: rETH
+- [Frax Ether](https://frax.finance/frxeth) ([source code](https://github.com/FraxFinance), [docs](https://docs.frax.finance/)) - Dual token system: frxETH (non-yielding) and sfrxETH (yielding)
+- [Swell](https://swellnetwork.io) ([docs](https://docs.swellnetwork.io/)) - Liquid staking + restaking in one protocol
+
+### Other Chains
+- [Marinade Finance](https://marinade.finance) ([source code](https://github.com/marinade-finance), [docs](https://docs.marinade.finance/)) - Solana liquid staking (mSOL)
+- [Jito](https://jito.network) - Solana liquid staking with MEV rewards (jitoSOL)
+- [Stader](https://staderlabs.com) ([source code](https://github.com/stader-labs), [docs](https://www.staderlabs.com/docs/)) - Multi-chain (ETH, MATIC, BNB, etc.)
+
+<a name="yield-aggregators" />
+
+## Yield Aggregators
+
+Auto-compound and optimize yields across multiple protocols.
+
+- [Yearn Finance](https://yearn.fi) ([source code](https://github.com/yearn), [docs](https://docs.yearn.fi/)) - OG yield optimizer. $1B+ TVL, battle-tested strategies
+- [Convex Finance](https://convexfinance.com) ([source code](https://github.com/convex-eth), [docs](https://docs.convexfinance.com/)) - $1.75B+ TVL, specializes in boosting Curve yields
+- [Beefy Finance](https://beefy.finance) ([source code](https://github.com/beefyfinance), [docs](https://docs.beefy.finance/)) - Multi-chain auto-compounder (20+ chains)
+- [Pendle](https://pendle.finance) ([source code](https://github.com/pendle-finance), [docs](https://docs.pendle.finance/)) - Trade future yield (separate principal from yield)
+- [Yield Yak](https://yieldyak.com) ([source code](https://github.com/yieldyak), [docs](https://docs.yieldyak.com/)) - Avalanche-focused auto-compounder
+
+<a name="restaking-protocols" />
+
+## Restaking Protocols
+
+Use staked ETH to secure additional networks beyond Ethereum (earn extra yield but with added slashing risk).
+
+- [EigenLayer](https://eigenlayer.xyz) ([source code](https://github.com/Layr-Labs/eigenlayer-contracts), [docs](https://docs.eigenlayer.xyz/)) - $14.3B+ TVL, pioneered restaking concept. Secures "Actively Validated Services" (AVSs)
+- [Symbiotic](https://symbiotic.fi) ([docs](https://docs.symbiotic.fi/)) - Flexible restaking with custom slashing conditions
+- [Karak](https://karak.network) ([docs](https://docs.karak.network/)) - Multi-asset restaking (not just ETH)
+- [Puffer Finance](https://puffer.fi) ([source code](https://github.com/PufferFinance), [docs](https://docs.puffer.fi/)) - Liquid restaking with anti-slashing tech
 
 <a name="derivative-protocols" />
 
 ## Derivative Protocols/Prediction Markets
 
-- Ethereum
-  - [Augur](https://www.augur.net) ([source code](https://github.com/AugurProject/augur), [white paper](https://www.augur.net/whitepaper.pdf)) - Prediction market protocol to enable anyone to "create and speculate on derivatives at a low cost for the first time"
-  - [bZx](https://b0x.network) ([source code](https://github.com/bZxNetwork), [white paper](https://b0x.network/pdfs/bZx_white_paper.pdf)) - 0x-integrated protocol for decentralized, peer-to-peer margin funding and trading
-   - [CDx](https://cdxproject.com) ([source code](https://github.com/cdx-project), [white paper](https://cdxproject.com/assets/resources/cdx-whitepaper.pdf)) - Protocol for tokenized credit default swaps
-   - [Daxia](https://www.daxia.us) ([source code](https://github.com/DecentralizedDerivatives), [white paper](https://github.com/DecentralizedDerivatives/DRCT_standard/blob/master/InDepthOverview.md)) - Tokenized derivatives protocol
-  - [dYdX](https://dydx.exchange) ([source code](https://github.com/dydxprotocol/protocol_v1), [white paper](https://whitepaper.dydx.exchange/)) - Margin-trading and options protocols
-  - [Gnosis](https://gnosis.io/) ([source code](https://github.com/gnosis), [white paper](https://gnosis.io/pdf/gnosis-whitepaper.pdf)) - Decentralized prediction market protocol
-  - [Market](https://marketprotocol.io) ([source code](https://github.com/MARKETProtocol), [white paper](https://marketprotocol.io/assets/MARKET_Protocol-Whitepaper.pdf)) - Protocol for structuring peer-to-peer agreements that settle in the future based on the price of a reference asset
-  - [UMA](https://umaproject.org) ([source code](https://github.com/umaprotocol), [white paper](https://umaproject.org/UMA-whitepaper.pdf)) - Protocol that allows any two counterparties to design and create their own financial contracts that are secured with economic incentives alone, making them self-enforcing and "universally accessible"
-  - [Veil](https://veil.co) ([source code](https://github.com/veilco)) - Peer-to-peer prediction market and derivatives platform built on top of Augur, 0x, and Ethereum
+### Perpetuals (Decentralized Leverage Trading)
+- [GMX](https://gmx.io) ([source code](https://github.com/gmx-io), [docs](https://docs.gmx.io/)) - $1B+ daily volume, up to 50x leverage. Uses GLP pool as counterparty
+- [dYdX](https://dydx.exchange) ([source code](https://github.com/dydxprotocol), [docs](https://docs.dydx.exchange/)) - Orderbook-based, now on standalone blockchain. Highest volume perp DEX
+- [Hyperliquid](https://hyperliquid.xyz) - Fully on-chain orderbook L1, fastest-growing perp DEX
+- [Synthetix Perps](https://synthetix.io) ([source code](https://github.com/Synthetixio/synthetix), [docs](https://docs.synthetix.io/)) - Debt pool model, deep liquidity for crypto and forex
+- [Gains Network (gTrade)](https://gains.trade) ([source code](https://github.com/GainsNetwork), [docs](https://docs.gains.trade/)) - Synthetic leverage on forex, commodities, stocks
+- [Vertex Protocol](https://vertexprotocol.com) ([docs](https://docs.vertexprotocol.com/)) - Hybrid AMM + orderbook on Arbitrum
+- [Kwenta](https://kwenta.io) ([source code](https://github.com/Kwenta/kwenta), [docs](https://docs.kwenta.io/)) - Perps powered by Synthetix liquidity
+
+### Options
+- [Lyra](https://lyra.finance) ([source code](https://github.com/lyra-finance), [docs](https://docs.lyra.finance/)) - Options AMM with dynamic pricing
+- [Premia](https://premia.finance) ([source code](https://github.com/Premian-Labs), [docs](https://docs.premia.finance/)) - Peer-to-pool options trading
+- [Dopex](https://dopex.io) ([docs](https://docs.dopex.io/)) - Options with rebates to reduce losses
+- [Ribbon Finance](https://ribbon.finance) ([source code](https://github.com/ribbon-finance), [docs](https://docs.ribbon.finance/)) - Automated options strategies (covered calls, put selling)
+
+### Prediction Markets
+- [Polymarket](https://polymarket.com) ([docs](https://docs.polymarket.com/)) - Largest prediction market, $2B+ in 2024 volume betting on real-world events
+- [Augur](https://augur.net) ([source code](https://github.com/AugurProject/augur), [docs](https://docs.augur.net/)) - OG prediction market protocol
+- [Azuro](https://azuro.org) - Sports betting prediction market
+
+<a name="layer-2-scaling-solutions" />
+
+## Layer 2 Scaling Solutions
+
+Faster, cheaper transactions while inheriting Ethereum security.
+
+### Optimistic Rollups
+- [Arbitrum](https://arbitrum.io) ([source code](https://github.com/OffchainLabs/arbitrum), [docs](https://docs.arbitrum.io/)) - $3.9B TVL, most DeFi activity (GMX, Uniswap, Aave, etc.)
+- [Base](https://base.org) ([docs](https://docs.base.org/)) - $4.3B TVL, 55% of L2 transaction volume. Built by Coinbase on OP Stack
+- [Optimism](https://optimism.io) ([source code](https://github.com/ethereum-optimism/optimism), [docs](https://docs.optimism.io/)) - $843M TVL, created OP Stack used by Base and others (Superchain)
+
+### ZK Rollups
+- [zkSync Era](https://zksync.io) ([source code](https://github.com/matter-labs/zksync-era), [docs](https://docs.zksync.io/)) - Native account abstraction, low fees
+- [Starknet](https://starknet.io) ([source code](https://github.com/starkware-libs), [docs](https://docs.starknet.io/)) - Uses STARK proofs, Cairo programming language
+- [Polygon zkEVM](https://polygon.technology/polygon-zkevm) ([source code](https://github.com/0xPolygonHermez), [docs](https://docs.polygon.technology/zkEVM/)) - EVM-equivalent ZK rollup
+- [Scroll](https://scroll.io) ([source code](https://github.com/scroll-tech), [docs](https://docs.scroll.io/)) - Bytecode-compatible zkEVM
+
+### Sidechains
+- [Polygon PoS](https://polygon.technology) ([source code](https://github.com/maticnetwork), [docs](https://docs.polygon.technology/)) - Mature DeFi ecosystem, faster but less secure than rollups
 
 <a name="bundling-protocols" />
 
-## Bundling Protocols
+## Index Protocols
 
-- Ethereum
-  - [Basket Protocol](https://www.coinalpha.com/projects) ([source code](https://github.com/CoinAlpha/basket-protocol), [wiki](https://github.com/CoinAlpha/basket-protocol/wiki)) - Protocol for creating tokens that contain a portfolio of other tokens
-  - [BSKT](https://cryptofinlabs.github.io) ([source code](https://github.com/cryptofinlabs/bskt), [white paper](https://github.com/cryptofinlabs/bskt-whitepaper/blob/master/bskt-whitepaper-v1.0.0.pdf)) - Generic smart contract that creates decentralized token portfolios
-  - [Set](https://www.setprotocol.com/) ([source code](https://github.com/SetProtocol/set-protocol-contracts), [white paper](https://www.setprotocol.com/pdf/set_protocol_whitepaper.pdf)) - Protocol for creating, issuing, redeeming, and rebalancing fungible, collateralized baskets of tokenized assets
+Tokenized portfolios/baskets of crypto assets.
+
+- [Index Coop](https://indexcoop.com) ([source code](https://github.com/IndexCoop), [docs](https://docs.indexcoop.com/)) - DeFi index products (DPI, MVI, ETH2x-FLI)
+- [Set Protocol](https://www.setprotocol.com/) ([source code](https://github.com/SetProtocol/set-protocol-v2), [docs](https://docs.tokensets.com/)) - Infrastructure for creating/managing tokenized portfolios
 
 <a name="fund-protocols" />
 
-## Fund Protocols
+## Asset Management
 
-- Ethereum
-  - [Fund Protocol](https://www.coinalpha.com/projects) ([source code](https://github.com/CoinAlpha/fund-protocol), [wiki](https://github.com/CoinAlpha/fund-protocol/wiki)) - Protocol for fund administration on the Ethereum blockchain
-  - [Melonport](https://melonport.com) ([source code](https://github.com/melonproject), [green paper](https://github.com/melonproject/paper/blob/master/melonprotocol.pdf)) - Protocol for digital asset management
+On-chain fund management platforms.
 
-<a name="tokenization-protocols" />
-
-## Tokenization Protocols
-- Ethereum
-  - [ERC-1404](https://erc1404.org/) ([source code](https://github.com/simple-restricted-token/simple-restricted-token), [eip](https://github.com/ethereum/EIPs/issues/1404)) - An open standard for issuing tokens with transfer restrictions
-  - [Harbor/R-Token](https://harbor.com) ([source code](https://github.com/harborhq), [white paper](https://harbor.com/rtokenwhitepaper.pdf)) - Compliant protocol for standardizing crypto-securities issuance and trading
-  - [Polymath/ST-20](https://polymath.network) ([source code](https://github.com/PolymathNetwork), original white paper removed from website but is archived [here](https://whitepaper.io/document/57/polymath-whitepaper)) - Platform for tokenizing securities
-  - [Abacus](https://abacusfi.com/) ([soure code](https://github.com/abacusfi), [white paper](https://github.com/abacusfi/whitepaper/blob/master/whitepaper.pdf)) - Protocol for permissioned tokens
-- [Stellar](https://www.stellar.org/) ([source code](https://github.com/stellar/stellar-core), [docs](https://www.stellar.org/developers/guides/concepts/assets.html)) - Stellar has first-party support for issuing arbitrary tokens
-
-<a name="kyc-aml-identity" />
-
-## KYC/AML/Identity
-- Ethereum
-  - [Bloom](https://bloom.co) ([source code](https://github.com/hellobloom), [white paper](https://bloom.co/whitepaper.pdf)) - Protocol for identity & credit-scoring
-  - [Project Hydro](https://projecthydro.org/) ([source code](https://github.com/HydroBlockchain), [white paper](https://github.com/HydroBlockchain/hydro-docs)) - Decentralized ecosystem using cutting-edge cryptography to secure user accounts, identities, and transactions
-  - [SelfKey](https://selfkey.org) ([source code](https://github.com/SelfKeyFoundation/Identity-Wallet), [white paper](https://selfkey.org/selfkey-whitepaper)) - "Self-sovereign" identity management system that aims to integrate with various financial services
-  - [Wyre](https://www.sendwyre.com) ([source code](https://github.com/sendwyre), [Medium post](https://blog.sendwyre.com/announcing-the-wyre-sdk-on-ramps-off-ramps-in-under-10-lines-of-code-f2b127eccb5d)) - Compliance SDK that mints ERC-721 tokens to the addresses of verified users
+- [Enzyme Finance](https://enzyme.finance) ([source code](https://github.com/enzymefinance), [docs](https://docs.enzyme.finance/)) - Create and manage on-chain investment funds
+- [dHEDGE](https://dhedge.org) ([source code](https://github.com/dhedge), [docs](https://docs.dhedge.org/)) - Social asset management (copy successful managers)
 
 
 <a name="applications-tools" />
 
 ## Applications/Tools
-- Ethereum
-  - [AMP](https://amp.credit/) - DeFi Software Developer with [EasyCDP](https://easycdp.com/), [SilverWire](https://silverwire.io/), [MultiSupply](https://multi.supply/), and [StableWire](https://stablewire.com/)
-  - [Bloqboard](https://bloqboard.com) - Lending platform for collateralized loans originated, settled, serviced, and managed on Ethereum and powered by Compound and Dharma
-  - [Fetch](https://hellofetch.co) - Application that is both a decentralized exchange aggregator for price discovery and trading and a dashboard for discovering and managing decentralized loans and borrowings
-  - [InstaDApp](https://instadapp.io) - "Decentralized bank" interface built on top of MakerDAO by developers of [MakerScan](https://makerscan.io)
-  - [Multis](https://multis.co) ([white paper](https://multis.co/white-paper.html)) - Interface for multisig contracts positioned as "cryptobank for companies"
-  - [Settle](https://settle.finance) - Web interface that combines chat with different crypto tools (including portfolio tracking and integration with DeFi protocols) and an "app store" for developers
-  - [Zerion](https://zerion.io) ([source code](https://github.com/zeriontech)) - Interface to decentralized finance protocols positioned as "trustless banking"
+
+### Wallets
+- [MetaMask](https://metamask.io) ([source code](https://github.com/MetaMask), [docs](https://docs.metamask.io/)) - Most popular Ethereum wallet, built-in swaps
+- [Rainbow](https://rainbow.me) - Mobile-friendly Ethereum wallet
+- [Rabby](https://rabby.io) ([source code](https://github.com/RabbyHub/Rabby)) - Desktop wallet with better multi-chain UX
+- [Safe](https://safe.global) ([source code](https://github.com/safe-global), [docs](https://docs.safe.global/)) - Multi-sig wallet (formerly Gnosis Safe)
+
+### Portfolio Trackers
+- [DeBank](https://debank.com) - Track positions across 1000+ protocols
+- [Zapper](https://zapper.xyz) - Portfolio tracker + easy DeFi interactions
+- [Zerion](https://zerion.io) ([source code](https://github.com/zeriontech)) - Portfolio + trading interface
+
+### Advanced DeFi Tools
+- [DeFi Saver](https://defisaver.com) - Automation for lending positions (MakerDAO, Aave, Compound)
+- [Revert Finance](https://revert.finance) - Manage Uniswap V3 liquidity
+- [Instadapp](https://instadapp.io) ([source code](https://github.com/Instadapp)) - Smart wallet for advanced DeFi interactions
+
+### Developer Infrastructure
+- [The Graph](https://thegraph.com) ([source code](https://github.com/graphprotocol), [docs](https://thegraph.com/docs/)) - Index and query blockchain data
+- [WalletConnect](https://walletconnect.com) ([source code](https://github.com/WalletConnect), [docs](https://docs.walletconnect.com/)) - Connect wallets to dapps
 
 <a name="analytics" />
 
 ## Analytics
-- Ethereum
-  - [0xTracker](https://0xtracker.com) - 0x protocol trade explorer and decentralised ERC-20 token price index
-  - [CuriousGiraffe](https://www.curiousgiraffe.io) - Analytics for [AirSwap](https://www.curiousgiraffe.io/airswap/), [Augur](https://www.curiousgiraffe.io/augur/), [Compound](https://www.curiousgiraffe.io/compound/), and [KyberSwap](https://www.curiousgiraffe.io/kyberswap/)
-  - [DEX Terminal](https://dexterminal.com) - Dashboard of decentralized finance activities, from exchange volume to lending/borrowing rates
-  - [ETH in DeFi](https://mikemcdonald.github.io/eth-defi/) - Chart of the amount of ETH locked in DeFi products (Maker, Compound, Augur, dYdX, Uniswap)
-  - [Loanscan](https://loanscan.io/) - Explorer for Ethereum loans
-  - [MakerScan](https://makerscan.io) - Explorer for MakerDao
-  - [MKR Tools](https://mkr.tools/) - Explorer for MakerDao
-  - [Uniswap ETH Liquidity](https://mikemcdonald.github.io/uniswap/eth-token-liquidity) - Chart of Uniswap's ETH liquidity by token
-  - [Predictions.Global](https://predictions.global/) - Dashboard with prediction markets from Augur
-- [DeFI Pulse](https://defipulse.com/) - Dashboard with info about locked amount in USD
-- [Stablecoin Index](https://stablecoinindex.com/) - Chart of prices biggest stablecoins
-- [Stable Report](https://stable.report/) - Weekly reports about stablecoins and list of most stablecoins
+
+### DeFi Dashboards
+- [DeFiLlama](https://defillama.com) ([source code](https://github.com/DefiLlama)) - Best DeFi data source: TVL, yields, stablecoins, unlocks across all chains
+- [Dune Analytics](https://dune.com) - Create custom dashboards with SQL queries on blockchain data
+- [Token Terminal](https://tokenterminal.com) - Protocol financials (revenue, fees, P/E ratios)
+
+### DEX & Trading
+- [DEX Screener](https://dexscreener.com) - Real-time charts for any DEX pair across all chains
+- [GeckoTerminal](https://geckoterminal.com) - DEX analytics by CoinGecko
+- [Dex.Guru](https://dex.guru) - Advanced DEX trading terminal
+
+### Block Explorers
+- [Etherscan](https://etherscan.io) - Ethereum
+- [Arbiscan](https://arbiscan.io) - Arbitrum
+- [Basescan](https://basescan.org) - Base
+
+### Research & Intelligence
+- [Messari](https://messari.io) - Research reports and protocol data
+- [Nansen](https://nansen.ai) - On-chain analytics with labeled wallets (tracks smart money)
+- [Arkham](https://arkaham.com) - Track entities and wallets
+- [Glassnode](https://glassnode.com) - On-chain metrics and market intelligence
 
 <a name="misc" />
 
 ## Misc
-- Ethereum
-  - [8x Protocol](https://8xprotocol.com) ([source code](https://github.com/8xprotocol), [white paper](https://rawcdn.githack.com/8xprotocol/whitepaper/master/latest.pdf)) - Protocol for decentralized subscription payment
-  - [AZTEC Protocol](https://www.aztecprotocol.com) ([source code](https://github.com/AztecProtocol/AZTEC), [white paper](https://github.com/AztecProtocol/AZTEC/blob/master/AZTEC.pdf)) - Privacy-enabling protocol for confidential transactions on the Ethereum network
-  - [Centrifuge](https://www.centrifuge.io) ([source code](https://github.com/centrifuge), [white paper](https://centrifuge.io/centrifuge_os_white_paper.pdf)) - Platform for financial supply chain, including exchange of invoices, purchase orders, etc.
-  - [Groundhog](https://groundhog.network) - "End-to-end" platform for decentralized recurring subscription payments
+
+### Real-World Assets (RWA)
+Bringing traditional assets on-chain.
+
+- [Ondo Finance](https://ondo.finance) ([docs](https://docs.ondo.finance/)) - Tokenized US Treasuries and bonds
+- [Centrifuge](https://centrifuge.io) ([source code](https://github.com/centrifuge), [docs](https://docs.centrifuge.io/)) - Tokenize real-world assets (invoices, real estate)
+- [Maple Finance](https://maple.finance) ([source code](https://github.com/maple-labs), [docs](https://docs.maple.finance/)) - Under-collateralized loans to institutions
+- [Goldfinch](https://goldfinch.finance) ([source code](https://github.com/goldfinch-eng), [docs](https://docs.goldfinch.finance/)) - Real-world loans without crypto collateral
+
+### Cross-Chain Bridges
+- [Across Protocol](https://across.to) ([source code](https://github.com/across-protocol), [docs](https://docs.across.to/)) - Fast, capital-efficient bridge using intents
+- [Stargate](https://stargate.finance) ([source code](https://github.com/stargate-protocol), [docs](https://stargateprotocol.gitbook.io/)) - LayerZero-based composable bridge
+
+### Privacy
+- [Aztec](https://aztec.network) ([source code](https://github.com/AztecProtocol), [docs](https://docs.aztec.network/)) - Privacy-focused ZK rollup
+- [Railgun](https://railgun.org) ([docs](https://docs.railgun.org/)) - Private DeFi transactions via ZK-SNARKs
+
+### Governance Tools
+- [Snapshot](https://snapshot.org) ([source code](https://github.com/snapshot-labs)) - Gasless off-chain voting for DAOs
+- [Tally](https://tally.xyz) ([docs](https://docs.tally.xyz/)) - On-chain governance interface
 
 <a name="community" />
 
 ## Community
-* [DeFi Reddit](https://www.reddit.com/r/defi/)
-* [DeFi Telegram](https://t.me/de_fi)
+
+### News & Media
+- [Bankless](https://bankless.com) - Newsletter and podcast
+- [The Defiant](https://thedefiant.io) - DeFi news
+- [DeFi Reddit](https://www.reddit.com/r/defi/) - Community discussions
+
+### Learning
+- [Finematics](https://finematics.com) - Educational videos
+- [DeFi Prime](https://defiprime.com) - Directory of DeFi products
+
+### For Developers
+- [ETHGlobal](https://ethglobal.com) - Hackathons and community
 
 <a name="contributions" />
 
