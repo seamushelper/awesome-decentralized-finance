@@ -211,6 +211,9 @@ On-chain fund management platforms.
 - [Revert Finance](https://revert.finance) - Manage Uniswap V3 liquidity
 - [Instadapp](https://instadapp.io) ([source code](https://github.com/Instadapp)) - Smart wallet for advanced DeFi interactions
 
+### Payment Streaming
+- [Sablier](https://sablier.com) ([source code](https://github.com/sablier-labs), [docs](https://docs.sablier.com/)) - Money streaming for payroll, vesting, grants. 200K+ streams across 20+ chains
+
 ### Developer Infrastructure
 - [The Graph](https://thegraph.com) ([source code](https://github.com/graphprotocol), [docs](https://thegraph.com/docs/)) - Index and query blockchain data
 - [WalletConnect](https://walletconnect.com) ([source code](https://github.com/WalletConnect), [docs](https://docs.walletconnect.com/)) - Connect wallets to dapps
@@ -223,6 +226,7 @@ On-chain fund management platforms.
 - [DeFiLlama](https://defillama.com) ([source code](https://github.com/DefiLlama)) - Best DeFi data source: TVL, yields, stablecoins, unlocks across all chains
 - [Dune Analytics](https://dune.com) - Create custom dashboards with SQL queries on blockchain data
 - [Token Terminal](https://tokenterminal.com) - Protocol financials (revenue, fees, P/E ratios)
+- [stablecoins.wtf](https://stablecoins.wtf) ([source code](https://github.com/stablecoins-wtf/stablecoins.wtf)) - Bloomberg-style stablecoin dashboard with live data and educational content
 
 ### DEX & Trading
 - [DEX Screener](https://dexscreener.com) - Real-time charts for any DEX pair across all chains
@@ -263,6 +267,12 @@ Bringing traditional assets on-chain.
 ### Governance Tools
 - [Snapshot](https://snapshot.org) ([source code](https://github.com/snapshot-labs)) - Gasless off-chain voting for DAOs
 - [Tally](https://tally.xyz) ([docs](https://docs.tally.xyz/)) - On-chain governance interface
+
+### Prize Savings
+- [PoolTogether](https://pooltogether.com) ([source code](https://github.com/pooltogether), [docs](https://docs.pooltogether.com/)) - No-loss prize savings protocol. Deposit to earn yield + win prizes
+
+### Payment Protocols
+- [x402](https://x402.org) ([source code](https://github.com/coinbase/x402), [docs](https://docs.cdp.coinbase.com/x402/)) - HTTP 402-based payment standard by Coinbase for micropayments and API monetization
 
 <a name="community" />
 
